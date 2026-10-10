@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tiles Fitting Services</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+        header { background-color: #2c3e50; color: white; padding: 40px 20px; text-align: center; }
+        .container { max-width: 800px; margin: 30px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+        h2 { color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 8px; margin-top: 30px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 20px 0; }
+        .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 6px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 15px; }
+        button { background-color: #27ae60; color: white; padding: 14px; border: none; border-radius: 4px; width: 100%; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+        button:hover { background-color: #219653; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>प्रीमियम टाइल्स फिटिंग सर्विसेज़ 🏢</h1>
+        <p>कम दामों में मज़बूत काम और बेहतरीन फिनिशिंग</p>
+    </header>
+
+    <div class="container">
+        <h2>हमारा काम (Latest Tile Work)</h2>
+        <div class="gallery">
+            <img src="https://unsplash.com" alt="Floor Tiles">
+            <img src="https://unsplash.com" alt="Bathroom Tiles">
+            <img src="https://unsplash.com" alt="Kitchen Tiles">
+        </div>
+
+        <h2>वर्कर्स बुक करने के लिए फॉर्म भरें</h2>
+        <form id="whatsappForm">
+            <div class="form-group">
+                <label>आपका नाम</label>
+                <input type="text" id="name" required placeholder="अपना नाम लिखें">
+            </div>
+            <div class="form-group">
+                <label>मोबाइल नंबर</label>
+                <input type="tel" id="phone" required placeholder="अपना नंबर लिखें">
+            </div>
+            <div class="form-group">
+                <label>कहाँ टाइल लगवानी है?</label>
+                <select id="service">
+                    <option value="फर्श (Flooring)">फर्श (Flooring)</option>
+                    <option value="बाथरूम (Bathroom)">बाथरूम (Bathroom)</option>
+                    <option value="किचन (Kitchen)">किचन (Kitchen)</option>
+                    <option value="दीवार (Wall Tiles)">दीवार/एलिवेशन</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>पूरा पता</label>
+                <textarea id="address" rows="3" required placeholder="जहाँ वर्कर्स को जाना है..."></textarea>
+            </div>
+            <button type="submit">WhatsApp पर बुकिंग भेजें 💬</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var service = document.getElementById('service').value;
+            var address = document.getElementById('address').value;
+            
+            // ⚠️ ध्यान दें: नीचे अपना असली 10 अंकों का नंबर 91 लगाकर लिखें
+            var myWhatsAppNumber = "919999999999"; 
+            
+            var message = "नया टाइल काम बुकिंग!%0A%0A" + 
+                          "*नाम:* " + name + "%0A" + 
+                          "*फोन:* " + phone + "%0A" + 
+                          "*काम:* " + service + "%0A" + 
+                          "*पता:* " + address;
+                          
+            window.open("https://wa.me" + myWhatsAppNumber + "?text=" + message, '_blank');
+        });
+    </script>
+</body>
+</html>
